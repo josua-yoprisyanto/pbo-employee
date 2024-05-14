@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="sidebar">
+        <div class="name">Employee</div>
+        <a class="active" href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+      </div>
+    </div>
+    <div class="content">
+        <div class="container">
+        <span class="title">Update Employee</span>
+        <form action="{% url 'uprec' mem.id %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="">First name</label>
+            <input type="text" name="first" value="{{mem.firstname}}">
+            </div>
+            <div>
+                <label for="">Last name</label>
+            <input type="text" name="last" value="{{mem.lastname}}">
+            </div>
+            <div>
+                <label for="">Contact Number</label>
+            <input type="number" name="contact" value="{{mem.contact}}">
+            </div>
+            <div>
+                <label for="">Position</label>
+            <input type="text" name="position" value="{{mem.position}}">
+            </div>
+            <div>
+                <label for="">Status</label>
+                <select name="status" value="{{mem.status}}">
+                    <option value="attended">Present</option>
+                    <option value="absent">Absent</option>
+                    <option value="excused">Excused</option>        
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Update</button>
+        </form>
+
+    </div>
+</div>
+</body>
+
+</html>

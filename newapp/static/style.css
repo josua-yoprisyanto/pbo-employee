@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #627254;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #DDD;
+    color: #627254;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    min-height: 100vh;
+  }
+
+  .header-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.container{
+    padding: 50px;
+}
+
+.table {
+    margin-top: 20px;
+    background-color: #EEE;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px 1px #DDD;
+}
+
+.table thead tr {
+    background-color: #76885b;
+    color: white;
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table thead tr td{
+    text-align: center;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    background-color: #627254;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.name{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #627254;
+}
+
+form {
+    margin-top: 20px;
+}
+form div {
+    margin-bottom: 20px;
+}
+
+label{
+    font-size: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

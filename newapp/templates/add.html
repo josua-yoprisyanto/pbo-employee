@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Employee</title>
+  </head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+  <body>
+    <div class="sidebar">
+      <div class="name">Employee</div>
+      <a class="active" href="/">Home</a>
+      <a href="/">About</a>
+      <a href="/">Contact</a>
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <span class="title">Add Employee</span>
+        <form action="{% url 'addrec' %}" method="post">
+          {% csrf_token %}
+          <div>
+            <label for="">First Name</label>
+            <input type="text" name="first" placeholder="Your First Name" />
+          </div>
+          <div>
+            <label for="">Last Name</label>
+            <input type="text" name="last" placeholder="Your Last Name" />
+          </div>
+          <div>
+            <label for="">Contact Number</label>
+            <input
+              type="number"
+              name="contact"
+              placeholder="Your Contact Number"
+            />
+          </div>
+          <div>
+            <label for="">Position</label>
+            <input type="text" name="position" placeholder="Your Position" />
+          </div>
+          <div>
+            <label for="">Status</label>
+            <select name="status">
+              <option value="attended">Present</option>
+              <option value="absent">Absent</option>
+              <option value="excused">Excused</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
